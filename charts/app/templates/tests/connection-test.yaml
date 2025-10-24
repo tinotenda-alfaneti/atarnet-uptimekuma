@@ -11,5 +11,5 @@ spec:
   containers:
     - name: wget
       image: busybox
-      command: ['sh', '-c', 'wget -qO- http://{{ .Values.Name }}:80/healthz']
+      command: ['sh', '-c', 'wget -qO- http://{{ .Values.name }}:80/']
   restartPolicy: Never
