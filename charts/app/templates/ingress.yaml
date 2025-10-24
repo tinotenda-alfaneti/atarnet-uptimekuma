@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    "helm.sh/resource-policy": keep
 spec:
   ingressClassName: nginx
   rules:
