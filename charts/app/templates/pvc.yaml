@@ -3,6 +3,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: {{ .Values.name }}-pvc
   namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.name }}
+  annotations:
+    "helm.sh/resource-policy": keep
 spec:
   accessModes:
     - ReadWriteOnce
