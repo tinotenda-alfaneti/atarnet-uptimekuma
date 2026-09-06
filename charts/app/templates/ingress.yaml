@@ -9,13 +9,15 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: {{ .Values.host }}
+    {{- range .Values.hosts }}
+    - host: {{ . }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.name }}
+                name: {{ $.Values.name }}
                 port:
                   number: 80
+    {{- end }}

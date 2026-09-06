@@ -1,6 +1,8 @@
 namespace: monitoring
 name: uptime-kuma
-host: uptime.atarnet.org
+hosts:
+  - uptime.atarnet.org
+  - uptime.alfaneti.uk
 image: louislam/uptime-kuma:latest
 storageClassName: microk8s-hostpath
 storage: 1Gi
